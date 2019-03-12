@@ -5,3 +5,4 @@
 >>>>>>> 1e74b8584ec3bed29930a7866e61357174a4ebf7
 - src: bertvv.bind
 - src: geerlingguy.ntp
+- src: git+https://github.com/b27-pl/prepare-os.git
