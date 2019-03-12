@@ -1,4 +1,9 @@
 # Playbook to setup DNS server in sg-lab.pl domain
+#
+# Created by Daniel Buk
+#
+# Requires:
+# bertvv.bind
 ---
 - hosts: all
   become: true
