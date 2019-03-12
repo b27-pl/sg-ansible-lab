@@ -1,3 +1,4 @@
 # Used by DNS server scripts
+- src: bertvv.rh-base
 - src: bertvv.bind
 - src: geerlingguy.ntp
