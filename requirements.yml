@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # Used by DNS server scripts
 - src: bertvv.rh-base
+=======
+>>>>>>> 1e74b8584ec3bed29930a7866e61357174a4ebf7
 - src: bertvv.bind
 - src: geerlingguy.ntp

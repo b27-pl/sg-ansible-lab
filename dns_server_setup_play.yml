@@ -1,0 +1,6 @@
+# Playbook to setup DNS server in sg-lab.pl domain
+---
+- hosts: all
+  become: true
+  roles:
+    - bertvv.bind
