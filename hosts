@@ -1,6 +1,0 @@
-all:
-  hosts:
-      ns1.sg-lab.pl:
-        ansible_host: 10.49.23.11
-        ansible_user: root
-        ansible_ssh_pass: password
