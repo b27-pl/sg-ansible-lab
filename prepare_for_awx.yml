@@ -2,7 +2,7 @@
 # be managed be Ansivble with AWX
 #
 ---
-- hosts: all
+- hosts: {{survey_hosts}}
   roles:
     - prepare-os
   handlers:
