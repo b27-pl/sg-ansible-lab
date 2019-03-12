@@ -2,9 +2,9 @@
 # be managed be Ansivble with AWX
 #
 ---
-- hosts: all
+- hosts: {{survey_hosts}}
   roles:
-    - prepare-os
+    - prepare_os
   handlers:
     - name: restart ssh
       service:
