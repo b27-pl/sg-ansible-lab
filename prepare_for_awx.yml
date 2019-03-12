@@ -1,0 +1,5 @@
+# Playbook used to prepare hosts to 
+# be managed be Ansivble with AWX
+#
+---
+

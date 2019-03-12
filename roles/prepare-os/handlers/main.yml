@@ -1,0 +1,6 @@
+---
+# handlers file for prepare_os
+- name: restart sshd
+  service: 
+    name: sshd
+    state: restarted

@@ -1,0 +1,37 @@
+---
+# tasks file for prepare_os
+- name: Add a new user named ansible
+  user:
+    name: ansible
+    password: "{{ ansible_user_password }}"
+
+- name: Add Ansible user do SuDoErs
+  copy:
+    dest: "/etc/sudoers.d/ansible"
+    content: "ansible ALL=(ALL) NOPASSWD: ALL"
+
+- name: Deploy SSH Key
+  authorized_key:    
+    user: ansible
+    key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
+    state: present
+
+- name: Disable Password Authentication
+  lineinfile:
+    dest: "/etc/ssh/sshd_config"
+    regexp: '^PasswordAuthentication'
+    line: "PasswordAuthentication no"
+    state: present
+    backup: yes
+  notify:
+    - restart ssh
+
+- name: Disable Root Login
+  lineinfile:
+    dest: "/etc/ssh/sshd_config"
+    regexp: '^PermitRootLogin'
+    line: "PermitRootLogin no"
+    state: present
+    backup: yes
+  notify: 
+    - restart ssh
