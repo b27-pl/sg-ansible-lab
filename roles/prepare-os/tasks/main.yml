@@ -13,7 +13,8 @@
 - name: Deploy SSH Key
   authorized_key:    
     user: ansible
-    key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
+    #key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
+    key: "{{ ssh_pub_key }}" #from AWX template
     state: present
   become: yes
   become_user: ansible

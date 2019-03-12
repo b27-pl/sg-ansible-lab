@@ -1,5 +1,5 @@
 # Playbook used to prepare hosts to 
-# be managed be Ansivble with AWX
+# be managed be Ansible with AWX
 #
 ---
 - hosts: "{{ survey_hosts }}"
