@@ -10,16 +10,16 @@
 
 - hosts: webservers
 
-  pre_tasks:
-    - name: Include vars from dns_vars.yml
+  tasks:
+  - name: Include vars from dns_vars.yml
       include_vars:
         file: 'dns_vars.yml' 
 
 
-- name: Debug DNS vars
-  debug:
-    var: "{{ os_dns.dns_server }}"
-    verbosity: 3 
+  - name: Debug DNS vars
+    debug:
+      var: "{{ os_dns.dns_server }}"
+      verbosity: 0
 # configure NTP
 
 # configure
