@@ -20,11 +20,11 @@
   #become: yes
   #become_user: ansible
 
-- name: Write the new host key to known hosts
-  connection: local
-  shell: "ssh-keyscan -t rsa -H {{ ansible_host }} >> ~/.ssh/known_hosts"
-  #become: yes
-  #become_user: ansible
+#- name: Write the new host key to known hosts
+#  connection: local
+#  shell: "ssh-keyscan -t rsa -H {{ ansible_host }} >> ~/.ssh/known_hosts"
+#  become: yes
+#  become_user: ansible
 
 - name: Disable Password Authentication
   lineinfile:
