@@ -8,7 +8,7 @@
 - hosts: dns
   become: true
 
-  tasks:
+  pre_tasks:
     - name: Include dns vars from dns_vars.yml
       include_vars:
         file: 'dns_vars.yml'     
