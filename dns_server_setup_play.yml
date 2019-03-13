@@ -5,11 +5,9 @@
 # Requires:
 # bertvv.bind
 ---
-- name: Include vars of dns_vars.yaml.
-  include_vars:
-    file: dns_vars.yaml
-
 - hosts: dns
   become: true
+  include_vars:
+    file: dns_vars.yaml
   roles:
     - bertvv.bind
