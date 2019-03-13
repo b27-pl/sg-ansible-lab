@@ -17,8 +17,8 @@
     #key: "{{ ssh_pub_key }}" #from AWX template
     key: "https://github.com/b27-pl/keys/master/sg-lab-ansible-key.pub"    
     state: present
-  become: yes
-  become_user: ansible
+  #become: yes
+  #become_user: ansible
 
 - name: Write the new host key to known hosts
   connection: local
