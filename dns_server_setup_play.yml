@@ -14,9 +14,9 @@
         file: 'dns_vars.yml'     
 
     - name: Debug DNS vars
-    debug:
-      var: "{{ bind_zone_master_server_ip }}"
-      verbosity: 3 
+      debug:
+        var: "{{ bind_zone_master_server_ip }}"
+        verbosity: 3 
   
   roles:
     - bertvv.bind
