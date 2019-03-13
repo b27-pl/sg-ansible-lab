@@ -9,6 +9,7 @@
 # configure DNS
 
 - hosts: webservers
+  gather_facts: false
 
   tasks:
   - name: Include vars from dns_vars.yml
