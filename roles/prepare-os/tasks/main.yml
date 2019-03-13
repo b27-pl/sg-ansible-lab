@@ -14,8 +14,9 @@
   authorized_key:    
     user: ansible
     #key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
-    key: "{{ ssh_pub_key }}" #from AWX template
-    state: present
+    #key: "{{ ssh_pub_key }}" #from AWX template
+    key: https://github.com/b27-pl/keys/master/sg-lab-ansible-key.pub    
+  state: present
   become: yes
   become_user: ansible
 
