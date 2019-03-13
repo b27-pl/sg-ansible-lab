@@ -5,7 +5,7 @@
 # Requires:
 # bertvv.bind
 ---
-- hosts: all
+- hosts: dns
   become: true
   roles:
     - bertvv.bind
