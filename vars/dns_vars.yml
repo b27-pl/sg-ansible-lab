@@ -1,4 +1,5 @@
 ---
+# DNS related vars
 bind_zone_master_server_ip: '10.49.23.11'
 bind_zone_domains:
   - name: 'sg-lab.pl'
@@ -39,3 +40,13 @@ bind_zone_dir: /var/local/named-zones
 bind_zone_file_mode: '0660'
 bind_forwarders:
   - '10.49.23.2'
+
+
+# Basic/common OS configuration 
+# DNS serttings
+os_dns:
+  dns_server: "{{ bind_zone_master_server_ip }}"
+  
+# configure NTP
+
+# configure
