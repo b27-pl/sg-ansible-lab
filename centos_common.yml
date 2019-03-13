@@ -1,0 +1,8 @@
+# Playbook sets up CentOs hosts
+# to work in sg-lab.pl domain
+#
+# Created by Daniel Buk
+#
+# Requires:
+# bertvv.bind
+---

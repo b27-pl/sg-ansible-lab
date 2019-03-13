@@ -1,0 +1,41 @@
+---
+bind_zone_master_server_ip: '10.49.23.11'
+bind_zone_domains:
+  - name: 'sg-lab.pl'
+    networks:
+      - '10.49.23'
+    ipv6_networks:
+      - '2001:db8::/48'
+    name_servers:
+      - ns1.sg-lab.pl.
+    hosts:
+      - name: ns1
+        ip: 10.49.23.11
+        ipv6: 2001:db8::11
+      - name: srv21
+        ip:
+          - 10.49.23.21
+        ipv6:
+          - 2001:db8::21
+        aliases:
+          - www1
+      - name: srv22
+        ip:
+          - 10.49.23.22
+        ipv6:
+          - 2001:db8::22
+        aliases:
+          - www2
+      - name: srv31
+        ip:
+          - 10.49.23.31
+        ipv6:
+          - 2001:db8::31
+        aliases:
+          - mysql1
+bind_allow_query: ['any']
+bind_listen_ipv4: ['any']
+bind_zone_dir: /var/local/named-zones
+bind_zone_file_mode: '0660'
+bind_forwarders:
+  - '10.49.23.2'
