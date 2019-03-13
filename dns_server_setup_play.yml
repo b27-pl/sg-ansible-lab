@@ -7,7 +7,10 @@
 ---
 - hosts: dns
   become: true
-  include_vars:
-    file: dns_vars.yaml
+
+  tasks:
+  - name: Include dns vars from dns_vars.yml
+    include_vars:
+      file: dns_vars.yml
   roles:
     - bertvv.bind
