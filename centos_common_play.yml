@@ -12,8 +12,8 @@
 
   tasks:
   - name: Include vars from dns_vars.yml
-      include_vars:
-        file: 'dns_vars.yml' 
+    include_vars:
+      file: 'dns_vars.yml' 
 
 
   - name: Debug DNS vars
