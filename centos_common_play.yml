@@ -8,19 +8,23 @@
 ---
 # configure DNS
 
-- hosts: webservers
-  gather_facts: false
+- hosts: AllManagedNoDNS
 
   tasks:
   - name: Include vars from dns_vars.yml
     include_vars:
       file: 'all_vars.yml' 
 
+  - name: Configure hostname and domain name
+    net_system:
+      hostname: "{{ inventory_hostname_short }}"
+      domain_name: sg-lab.pl
 
-  - name: Debug DNS vars
-    debug:
-      var: "{{ os_common_vars.dns_server }}"
-      verbosity: 0
+  - name: Configure name servers
+    net_system:
+      name_servers:
+        - 10.49.23.11
+
 # configure NTP
 
 # configure
