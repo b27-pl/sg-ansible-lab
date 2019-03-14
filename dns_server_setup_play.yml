@@ -11,12 +11,7 @@
   pre_tasks:
     - name: Include dns vars from dns_vars.yml
       include_vars:
-        file: 'dns_vars.yml'     
+        file: 'all_vars.yml'     
 
-    - name: Debug DNS vars
-      debug:
-        var: "{{ bind_zone_master_server_ip }}"
-        verbosity: 3 
-  
   roles:
     - bertvv.bind

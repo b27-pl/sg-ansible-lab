@@ -1,0 +1,90 @@
+---
+# DNS related vars
+bind_zone_master_server_ip: '10.49.23.11'
+bind_zone_domains:
+  - name: 'sg-lab.pl'
+    networks:
+      - '10.49.23'
+    ipv6_networks:
+      - '2001:db8::/48'
+    name_servers:
+      - ns1.sg-lab.pl.
+    hosts:
+      - name: ns1
+        ip: 10.49.23.11
+        ipv6: 2001:db8::11
+      - name: srv21
+        ip:
+          - 10.49.23.21
+        ipv6:
+          - 2001:db8::21
+        aliases:
+          - www1
+      - name: srv22
+        ip:
+          - 10.49.23.22
+        ipv6:
+          - 2001:db8::22
+        aliases:
+          - www2
+      - name: srv31
+        ip:
+          - 10.49.23.31
+        ipv6:
+          - 2001:db8::31
+        aliases:
+          - mysql1
+bind_allow_query: ['any']
+bind_listen_ipv4: ['any']
+bind_zone_dir: /var/local/named-zones
+bind_zone_file_mode: '0660'
+bind_forwarders:
+  - '10.49.23.2'
+
+
+# Basic/common OS configuration 
+# DNS serttings
+os_common_vars:
+  dns_server: "{{ bind_zone_master_server_ip }}"
+  
+
+# Variables listed here are applicable to Wordpress installation (webservers_play.yml)
+wp_version: 4.6
+wp_sha256sum: c1856cf969b1e73025ba2c681491908c3a4a6c5a2333f4531bf9bfb90f634380
+
+# MySQL settings
+mysqlservice: mysqld
+mysql_port: 3306
+
+# These are the WordPress database settings
+wp_db_name: wordpress
+wp_db_user: wordpress
+wp_db_password: password
+
+# This is used for the nginx server configuration, but access to the
+# WordPress site is not restricted by a named host.
+nginx_port: 80
+server_hostname: server.example.com
+
+# Disable All Updates
+# By default automatic updates are enabled, set this value to true to disable all automatic updates
+auto_up_disable: false
+
+#Define Core Update Level
+# true  = Development, minor, and major updates are all enabled
+# false = Development, minor, and major updates are all disabled
+# minor = Minor updates are enabled, development, and major updates are disabled
+core_update_level: true
+
+# configure Mysql
+
+mysql_root_password: password
+mysql_databases:
+  - name: example_db
+    encoding: utf8
+    collation: utf8_general_ci
+mysql_users:
+  - name: example_user
+    host: "%"
+    password: password
+    priv: "example_db.*:ALL"

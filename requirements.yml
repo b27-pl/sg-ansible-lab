@@ -1,5 +1,5 @@
 # Used by DNS server scripts
 - src: bertvv.rh-base
 - src: bertvv.bind
-- src: geerlingguy.ntp
+#- src: geerlingguy.ntp
 - src: git+https://github.com/b27-pl/prepare-os.git

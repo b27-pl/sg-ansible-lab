@@ -1,0 +1,15 @@
+#  Install WordPress, MariaDB, Nginx, and PHP-FPM
+---
+- hosts: webservers
+  become: true
+
+  pre_tasks:
+    - name: Include dns vars from dns_vars.yml
+      include_vars:
+        file: 'all_vars.yml'  
+  roles:
+    - common
+    - mariadb
+    - nginx
+    - php-fpm
+    - wordpress
