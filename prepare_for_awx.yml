@@ -3,6 +3,7 @@
 #
 ---
 - hosts: "{{ survey_hosts }}"
+  become: true
   roles:
     - prepare-os
   handlers:
